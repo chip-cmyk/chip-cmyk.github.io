@@ -1,0 +1,308 @@
+/* more通用 */
+.text-more {
+  max-width: 120rem;
+  padding: 2.4rem 6.4rem;
+  margin: 0 3.6rem;
+  text-indent: 2em;
+  line-height: 2;
+  letter-spacing: 0.1rem;
+  color: #625858;
+}
+.text-more:not(:last-child) {
+  border-bottom: 0.2rem solid #e2cccc;
+}
+section {
+  padding: 7.2rem 0 4.8rem;
+  background-color: #faf9f3;
+}
+
+/* 导航栏 */
+.more-header {
+  box-shadow: none;
+  backdrop-filter: blur(0.36rem);
+  background-color: rgba(250, 249, 243, 0.9);
+  z-index: 9999;
+}
+/* 首页 */
+.img-scroll {
+  display: flex;
+  justify-content: center;
+}
+.scroll-container,
+.scroll-ul {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.scroll-ul {
+  display: flex;
+  margin-top: 5rem;
+}
+.scroll-li {
+  list-style: none;
+  height: 100%;
+  padding-right: 2rem;
+}
+.scroll-li img {
+  width: 64rem;
+  border-radius: 2.5rem;
+  object-fit: cover;
+  object-position: center;
+}
+.more-hero {
+  position: relative;
+  padding: 4.2rem 0 6.4rem;
+}
+.on-scroll {
+  position: absolute;
+  z-index: 999;
+  width: 60%;
+  height: 100%;
+  background-color: rgba(250, 249, 243, 0.96);
+  left: 7%;
+}
+.story-intro {
+  padding: 2.4rem 10rem 0 7rem;
+  font-family: "headingfont";
+  font-size: 2rem;
+  line-height: 1.2;
+}
+.more-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-m {
+  width: 72%;
+  min-width: 32rem;
+  padding: 5rem 9rem 0 0;
+}
+.bg-container {
+  position: relative;
+  overflow: hidden;
+}
+.more-bg1 {
+  z-index: 0;
+  left: -15%;
+  top: 3%;
+}
+.more-bg2 {
+  z-index: 0;
+  bottom: 18%;
+  right: -20%;
+}
+
+/* 关卡展示 */
+.stage-show {
+  display: flex;
+  justify-content: space-around;
+  padding: 3.2rem 0;
+}
+.stage-box {
+  width: 90%;
+  height: 50rem;
+  display: flex;
+  margin-top: 3.2rem;
+}
+.stage {
+  flex: 1;
+  overflow: hidden;
+  transition: 0.5s ease;
+  margin: 0 2rem;
+  position: relative;
+  backdrop-filter: blur(1.15rem);
+  border: 0.2rem solid #faf9f3;
+  border-radius: 1.2rem;
+}
+.stage > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 200%; */
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+.stage:hover {
+  flex-basis: 80%;
+}
+.stage:hover > img {
+  width: 100%;
+}
+
+/* 角色一览 卡牌翻转*/
+.section-featured {
+  /* height: 124rem; */
+  padding-bottom: 9.6rem;
+}
+.character {
+  align-items: center;
+}
+.card-box,
+.character {
+  display: flex;
+  justify-content: center;
+}
+.card-box {
+  max-width: 120rem;
+  flex-wrap: wrap;
+}
+.card,
+.card-box {
+  position: relative;
+}
+.card {
+  width: 32rem;
+  height: 44rem;
+  perspective: 100rem;
+  margin: 3rem;
+  transform-style: preserve-3d;
+}
+.card:before {
+  content: " ";
+  display: block;
+  width: 100%;
+  height: 1.8rem;
+  transform: rotateX(171deg) translateY(-50rem);
+  background: radial-gradient(
+    ellipse closest-side,
+    rgba(0, 0, 0, 0.05) 0,
+    transparent 100%
+  );
+}
+.back-face,
+.contents,
+.front-face {
+  position: absolute;
+}
+.card-one {
+  background: url(../img/more/角色1.png);
+}
+.card-two {
+  background: url(../img/more/角色4.png);
+}
+.card-three {
+  background: url(../img/more/角色3.png);
+}
+.card-four {
+  background: url(../img/more/角色2.png);
+}
+.card-five {
+  background: url(../img/more/角色5.png);
+}
+.back-face,
+.front-face {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #555;
+  background-size: cover;
+  background-position: 50%;
+  transform: translateY(0);
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+.contents {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  perspective: 100rem;
+  transform: translateY(-50%) translateZ(9rem) scale(0.94);
+  color: #997878;
+}
+.back h2 {
+  font-size: 4.2rem;
+  padding-bottom: 0.5rem;
+}
+.back span {
+  font-size: 2.5rem;
+  font-family: "Flanker";
+}
+.front p {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+.front span {
+  font-size: 2.3rem;
+}
+.back-face {
+  transform: rotateY(180deg);
+  background: url(../img/more/cardback.png);
+  background-size: cover;
+  background-position: 50%;
+}
+.card:hover > .back-face {
+  transform: rotateY(0);
+}
+.card:hover > .front-face {
+  transform: rotateY(-180deg);
+}
+.section-featured .container {
+  width: 130rem;
+}
+
+/* 游戏CG */
+.game-cg {
+  padding: 7.2rem 0;
+}
+.cg-span {
+  font-family: "Flanker";
+  margin-left: 0.4rem;
+  letter-spacing: 0.4rem;
+}
+.cg-span-heading {
+  font-size: 5rem;
+}
+.cg {
+  margin-top: 4.2rem;
+  display: flex;
+  height: 64rem;
+  justify-content: center;
+}
+.cg-container {
+  width: 120rem;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.2rem solid #e2cccc;
+  padding-top: 4rem;
+  overflow: hidden;
+  -webkit-box-reflect: below 1.3rem
+    linear-gradient(transparent 70%, rgba(0, 0, 0, 0.2));
+}
+.big-box {
+  width: 90rem;
+  height: 54rem;
+  background-size: cover;
+  background-position: 50%;
+  transition: 0.4s;
+}
+.small-box {
+  width: 20rem;
+  height: 54rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.small-box .img {
+  position: relative;
+  width: 20rem;
+  height: 9rem;
+  right: 0;
+  transition: 0.5s;
+}
+.small-box .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  transition: 0.5s;
+}
+.small-box .img.active,
+.small-box .img:hover img {
+  opacity: 0;
+  right: 25rem;
+}
